@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(46, 46, 46);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* container */
+
+.container {
+  background-color: #ddd;
+  width: 625px;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+/* Full view */
+
+.full-view {
+  margin: 0 auto 10px;
+  background-color: #bbb;
+  width: 600px;
+  height: 300px;
+}
+
+.full-view img {
+  height: 300px;
+  max-width: 550px;
+  margin: auto;
+  display: block;
+}
+
+/* Thumb */
+
+.thumbs {
+  height: 70vh;
+  overflow: scroll;
+}
+
+.thumbs .img-cover {
+  margin-left: 1px;
+  width: 195px;
+  height: 200px;
+  overflow: hidden;
+  float: left;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+.img-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+  transition: all 0.5s ease;
+  transform: scale(1);
+}
+
+.img-cover img:hover {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+
+/* clarfix */
+
+.thumbs::before,
+.thumbs::after {
+  content: " ";
+  display: block;
+}
+
+.thumbs::after {
+  clear: both;
+}
+
+/* animation */
+
+@keyframes fadeIn {
+  to{
+    opacity: 1;
+  }
+}
+
+.fade{
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.active{
+  opacity: 0.5;
+}
